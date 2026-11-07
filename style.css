@@ -1,0 +1,298 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f5f0;
+  color: #8a6349;
+}
+
+.header {
+  background: #8a6349;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 13px;
+  color: #e8d9d0;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 10px 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: #d8b98c;
+  color: #3d302d;
+}
+
+.container {
+  width: 86%;
+  max-width: 1100px;
+  margin: 25px auto;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h2 {
+  font-size: 21px;
+  margin-bottom: 14px;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.overview-card {
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #eadfd4;
+}
+
+.overview-card p {
+  color: #81716a;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.overview-card h3 {
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.balance-card {
+  background: #eee5d8;
+}
+
+.transaction-box,
+.section-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eadfd4;
+  max-width: 650px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d9ccc0;
+  border-radius: 7px;
+  background: #fffdfa;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #9c785b;
+}
+
+.main-btn {
+  background: #755446;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.main-btn:hover {
+  background: #5b4035;
+}
+
+.message {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #a13e32;
+}
+
+.current-budget {
+  background: #f5efe7;
+  padding: 17px;
+  border-radius: 9px;
+  margin-top: 20px;
+}
+
+.current-budget p {
+  font-size: 13px;
+  color: #81716a;
+  margin-bottom: 5px;
+}
+
+.current-budget h2 {
+  margin: 0;
+}
+
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.history-heading p {
+  font-size: 13px;
+  color: #81716a;
+}
+
+.clear-btn {
+  background: #a94d43;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #87382f;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #eadfd4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th,
+td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #eee7df;
+  font-size: 13px;
+}
+
+th {
+  background: #eee5d8;
+  color: #493532;
+}
+
+.income-text {
+  color: #35804b;
+  font-weight: bold;
+}
+
+.expense-text {
+  color: #b44c42;
+  font-weight: bold;
+}
+
+.delete-btn {
+  border: none;
+  background: #f5e2df;
+  color: #a13e32;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #ebc9c4;
+}
+
+.empty-message {
+  text-align: center;
+  color: #81716a;
+  padding: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 750px) {
+  .header {
+    padding: 16px 5%;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-btn {
+    flex: 1;
+    padding: 10px 5px;
+  }
+
+  .overview-card h3 {
+    font-size: 17px;
+  }
+
+  .history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div>
+      <h1>Budget Tracker</h1>
+      <p>Manage your money wisely.</p>
+    </div>
+
+    <nav>
+      <button class="nav-btn" data-page="budget">Budget</button>
+      <button class="nav-btn active" data-page="home">Home</button>
+      <button class="nav-btn" data-page="history">History</button>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+      <h2>Overview</h2>
+
+      <div class="overview">
+        <div class="overview-card">
+          <p>Starting Budget</p>
+          <h3 id="totalBudget">₱0.00</h3>
+        </div>
+
+        <div class="overview-card">
+          <p>Total Income</p>
+          <h3 id="totalIncome">₱0.00</h3>
+        </div>
+
+        <div class="overview-card">
+          <p>Total Expenses</p>
+          <h3 id="totalExpenses">₱0.00</h3>
+        </div>
+
+        <div class="overview-card balance-card">
+          <p>Remaining Balance</p>
+          <h3 id="remainingBalance">₱0.00</h3>
+        </div>
+      </div>
+
+      <div class="transaction-box">
+        <h2>Add Transaction</h2>
+
+        <form id="transactionForm">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            placeholder="e.g. Food, Allowance, Transportation"
+            required
+          >
+
+          <label for="amount">Amount (₱)</label>
+          <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+            min="0.01"
+            step="0.01"
+            required
+          >
+
+          <label for="type">Transaction Type</label>
+          <select id="type" required>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+
+          <button type="submit" class="main-btn">Add Transaction</button>
+          <p id="transactionMessage" class="message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- BUDGET PAGE -->
+    <section id="budget" class="page">
+      <div class="section-box">
+        <h2>Set Your Budget</h2>
+        <p>Enter your starting budget below.</p>
+
+        <form id="budgetForm">
+          <label for="budgetInput">Starting Budget (₱)</label>
+          <input
+            type="number"
+            id="budgetInput"
+            placeholder="Enter your budget"
+            min="0"
+            step="0.01"
+            required
+          >
+
+          <button type="submit" class="main-btn">Save Budget</button>
+          <p id="budgetMessage" class="message" aria-live="polite"></p>
+        </form>
+
+        <div class="current-budget">
+          <p>Your Current Budget</p>
+          <h2 id="currentBudget">₱0.00</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY PAGE -->
+    <section id="history" class="page">
+      <div class="history-heading">
+        <div>
+          <h2>Transaction History</h2>
+          <p>View all your recorded transactions.</p>
+        </div>
+
+        <button id="clearHistory" class="clear-btn" type="button">
+          Clear History
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="historyTable"></tbody>
+        </table>
+      </div>
+
+      <p id="emptyMessage" class="empty-message">
+        No transactions yet.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
